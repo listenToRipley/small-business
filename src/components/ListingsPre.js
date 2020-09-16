@@ -7,12 +7,13 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
-
-//use the pre navbar 
+import NavBar from './NavBarPre'
 
 const ListingsPre = (props) => {
   return (
-    <Container maxWidth='lg' className='listingContainer'>
+    <div>
+      <NavBar/>
+      <Container maxWidth='lg' className='listingContainer'>
       <Table>
         <TableHead>
           <TableRow>
@@ -34,6 +35,7 @@ const ListingsPre = (props) => {
         </TableBody>
       </Table>
     </Container>
+    </div>
   )
 }
 

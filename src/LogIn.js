@@ -38,7 +38,7 @@ const LogIn = () => {
    
      return this.state.loggedIn ? <Dashboard user={this.state.username}/> : (
        <div>
-         <NavBar />
+         <NavBar/>
            <Card className="logInCard">
              <CardContent>
                 <TextField onChange={this.handleName} label="Username *" />
