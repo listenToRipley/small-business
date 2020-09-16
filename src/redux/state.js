@@ -1,5 +1,5 @@
 export default {
-  logInStatus: false,
+  loggedIn: false,
   user: {
     username: 'hello',
     email: 'goodnight@universe.com',

@@ -12,7 +12,7 @@ import NavBar from './NavBar'
 //Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
 
-const ListingsPre = (props) => {
+const Listings = (props) => {
   return (
     <div>
       <NavBar/>
@@ -44,4 +44,4 @@ const ListingsPre = (props) => {
   )
 }
 
-export default ListingsPre
+export default Listings
