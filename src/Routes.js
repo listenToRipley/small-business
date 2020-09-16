@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import LogIn from './LogIn';
-import AddBusiness from './containers/AddBusiness';
-import Listings from './components/Listings';
-import Business from './containers/Business' //would like the route to update with the vendor's name, think about that. 
+import AddBusiness from './componentsAddBusiness'; //will need to change to containers
+import Listings from './components/Listings'; //will need to change containers 
+import Business from './components/Business' //would like the route to update with the vendor's name, think about that. 
 
 
 const Router = () => {
