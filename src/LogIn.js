@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavBar from './Components/NavBarPre';
+import NavBar from './components/NavBar';
 import { Button, TextField , Card, CardContent } from '@material-ui/core';
 import './App.css';
 

@@ -7,9 +7,9 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
-import NavBar from './NavBarPost'
+import NavBar from './NavBar'
 
-//use the same content as the ListingPre, but use the NavBarPost and add a delete option to the list 
+//Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
 
 const ListingsPre = (props) => {

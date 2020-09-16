@@ -1,0 +1,1 @@
+//this will be the functionality to removing a business 
