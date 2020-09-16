@@ -11,11 +11,12 @@ import {
 //maybe description should be a text box and not field? want to add a character limit? 
 class AddBusiness extends Component {
   state = {
-    'id':'', //this should be the length of the state + 1 
-    'name': '',
-    'address': '',
-    'hours': '',
-    'description': ''
+    open: false, 
+    id:'', //this should be the length of the state + 1 
+    name: '',
+    address: '',
+    hours: '',
+    description: ''
   }
 
   toggleDialog = () => this.setState({ open: !this.state.open })
@@ -40,7 +41,7 @@ class AddBusiness extends Component {
 
   //this needs work 
   componentDidUpdate = (prevProps, prevState) => {
-    if(prevState.open !=== this.state.open) {
+    if (prevState.open !== this.state.open) {
       this.setState({
         'name': '',
         'address': '',
@@ -58,7 +59,7 @@ class AddBusiness extends Component {
           <Button 
             variant='container'
             className='addBusiness'
-            onClick-{this.toggleDialog}
+            onClick={this.toggleDialog}
           >Add Business</Button>
         </div>
         <div>
@@ -106,4 +107,4 @@ class AddBusiness extends Component {
 
 }
 
-export AddBusiness
+export default AddBusiness
