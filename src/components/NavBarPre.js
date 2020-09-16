@@ -16,6 +16,4 @@ const NavBar = () => {
   )
 }
 
-//add logon information to the navbar? 
-
 export default NavBar;
