@@ -11,43 +11,53 @@ const primary = green[500]
 //for pre login - add links - Listings and login
 //for post ling - add links  - Listings, add and logout - have this based on the login status
 
-const NavBar = () => {
+const NavBar = (props) => {
+
   return (
-    <AppBar position="static">
-      <ToolBar color="primary">
-        <Typography variant="subtitle1" color="inherit">Small Business</Typography>
-        <ul>
-          <li className='navLi'>
-          <Link to='/Listings'>Listings</Link>
-          </li>
-          <li className='navLi'>
-          <Link to='/'>Login</Link>
-          </li>
-        </ul>
-      </ToolBar>
-    </AppBar>
-  )
+  <AppBar position="static">
+    <ToolBar>
+      <Typography variant="subtitle1" color="inherit">Small Business</Typography>
+    </ToolBar>
+  </AppBar>
+)
+  // if(props.loggedIn === false) {
+  //   return (
+  //     <AppBar position='relative'>
+  //       <ToolBar color={primary} >
+  //         <Typography>Small Business</Typography>
+  //         <ul className='nav-list'>
+  //         <li className='nav-list-item'>
+  //           <Link to='/listings'>Listings</Link>
+  //         </li>
+  //         <li className='nav-list-item'>
+  //           <Link exact to='/'>LogIn</Link>
+  //         </li> 
+  //       </ul>
+  //       </ToolBar>
+  //     </AppBar>
+  //   )
+  // } else {
+  //   return (
+  //    <AppBar position='relative'>
+  //     <ToolBar color={primary} >
+  //         <Typography>Small Business</Typography>
+  //       </ToolBar>
+  //       <ul className='nav-list'>
+  //         <li className='nav-list-item'>
+  //           <Link to='/listings'>Listings</Link>
+  //         </li>
+  //         <li className='nav-list-item'>
+  //           <Link to='/add_business'>Add Business</Link>
+  //         </li>
+  //         <li className='nav-list-item'>
+  //           <Link exact to='/'>LogOut</Link>
+  //         </li> 
+  //       </ul>
+  //     </AppBar>
+  //   )
+  // }
 }
 
 //logout should looks like: 
-
-// return (
-//   <AppBar position="static">
-//     <ToolBar>
-//       <Typography variant="subtitle1" color="inherit">Small Business</Typography>
-//       <ul>
-//         <li className='navLi'>
-//         <Link>Listings</Link>
-//         </li>
-//         <li className='navLi'>
-//         <Link>Add</Link>
-//         </li>
-//         <li className='navLi'>
-//         <Link>LOGOUT</Link>
-//         </li>
-//       </ul>
-//     </ToolBar>
-//   </AppBar>
-// )
 
 export default NavBar;

@@ -43,7 +43,7 @@ class LogIn extends Component {
   }
 
   render() { 
-  
+  //make sure to pass the status
     return this.state.loggedIn ? <Listings user={this.state.username}/> : (
       <div>
         <NavBar />
