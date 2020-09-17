@@ -3,7 +3,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {Routes, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 //for pre login - add links - Listings and login
@@ -11,49 +11,33 @@ import {Routes, Link} from 'react-router-dom';
 
 const NavBar = (props) => {
 
+  console.log(props) //add an if logIn == true, include 'add business' 
+
   return (
-  <AppBar position="static" style={{background: '#3bb371'}}>
+  <AppBar position='static' style={{background: '#3bb371'}}>
     <ToolBar>
-      <Typography variant="subtitle1">Small Business</Typography>
+
+      <Typography variant='h6' style={{flexGrow: '1'}}>Small Business</Typography>
+
+      <ul className='nav-list'>
+      
+        <li className='nav-list-item'>
+          <Link to='/listings'>Listings</Link>
+        </li>
+
+        <li className='nav-list-item'
+          onClick={() => {
+           document.cookie='logIn='
+           window.location.replace('/')
+          }}>
+          <Link to='/'>Logout</Link>
+        </li>
+
+      </ul>
+      
     </ToolBar>
   </AppBar>
 )
-  // if(props.loggedIn === false) {
-  //   return (
-  //     <AppBar position='relative'>
-  //       <ToolBar color={primary} >
-  //         <Typography>Small Business</Typography>
-  //         <ul className='nav-list'>
-  //         <li className='nav-list-item'>
-  //           <Link to='/listings'>Listings</Link>
-  //         </li>
-  //         <li className='nav-list-item'>
-  //           <Link exact to='/'>LogIn</Link>
-  //         </li> 
-  //       </ul>
-  //       </ToolBar>
-  //     </AppBar>
-  //   )
-  // } else {
-  //   return (
-  //    <AppBar position='relative'>
-  //     <ToolBar color={primary} >
-  //         <Typography>Small Business</Typography>
-  //       </ToolBar>
-  //       <ul className='nav-list'>
-  //         <li className='nav-list-item'>
-  //           <Link to='/listings'>Listings</Link>
-  //         </li>
-  //         <li className='nav-list-item'>
-  //           <Link to='/add_business'>Add Business</Link>
-  //         </li>
-  //         <li className='nav-list-item'>
-  //           <Link exact to='/'>LogOut</Link>
-  //         </li> 
-  //       </ul>
-  //     </AppBar>
-  //   )
-  // }
 }
 
 //logout should looks like: 
