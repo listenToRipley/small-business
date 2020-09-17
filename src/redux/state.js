@@ -1,15 +1,15 @@
 export default {
-  loggedIn: false,
-  user: {
-    username: 'hello',
-    email: 'goodnight@universe.com',
-    password: '1234'
+  logIn: '',
+  users: {
+    username: '',
+    email: '',
+    password: ''
   },
   businesses: [{
-    'id':'1',
-    'name': 'Silver Sea',
-    'address': '123, 23123144',
-    'hours': '1-2',
-    'description': 'Jewelry'
+    'id':'',
+    'name': '',
+    'address': '',
+    'hours': '',
+    'description': ''
   }]
 }

@@ -3,30 +3,28 @@ import NavBar from './NavBar';
 import Listings from './Listings';
 import { Button, TextField , Card, CardContent } from '@material-ui/core';
 
-class LogIn extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      loggedIn: false,
-      username: '',
-      password: ''
-   };
-  };
+
+const LogIn = (props) => {
+
+  checkAuth = () => {
+    const cookies = cookies.parse(document.cookie = 'logIn=true;max-age=60*5000')
+    return cookies['logIn'] ? true : false 
+  }
 
   clickHandler = (e) => {
    // e.preventDefault();
     //console.log(this.state)
 
-    if (this.state.username === '') {
+    if (props.username === '') {
       alert(`You haven't entered a username yet`) 
-    } else if (this.state.password === '') {
+    } else if (props.password === '') {
       alert(`You must have a password`)
-    } else if (this.state.username !== '' && this.state.password !== '') {
+    } else if (props.username !== '' && props.password !== '') {
     this.setState({
-      loggedIn: !this.state.loggedIn,
+      loggedIn: !props.logIn,
     })
   }
-    console.log(this.state)
+    console.log(props)
   };
 
   handleName = e => {
@@ -41,23 +39,21 @@ class LogIn extends Component {
     })
   }
 
-  render() { 
   //make sure to pass the status
-    return this.state.loggedIn ? <Listings user={this.state.username} loggedIn={this.state.loggedIn}/> : (
+    return props.logIn ? <Listings user={ props.users.username} loggedIn={props.logIn}/> : (
       <div>
         <NavBar />
           <Card className="logInCard">
             <CardContent>
-               <TextField onChange={this.handleName} label="Username *" />
+               <TextField onChange={handleName} label="Username *" />
                <br />
-               <TextField onChange={this.handlePassword} type="password" id="outlined-password-input" label="Password *" />
+               <TextField onChange={handlePassword} type="password" id="outlined-password-input" label="Password *" />
                <br />
-               <Button className="logInButton" onClick={this.clickHandler}>Log In</Button>
+               <Button className="logInButton" onClick={clickHandler}>Log In</Button>
             </CardContent>
           </Card>
       </div>
     )
-  }
 }
 
 export default LogIn;

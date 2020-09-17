@@ -6,14 +6,16 @@ import {Provider } from 'react-redux';
 import store from './redux/store';
 import NavBar from './components/NavBar';
 
-const App = () => (
-  <Provider st0re={store}>
+const App = () => {
+  return (
+    <Provider st0re={store}>
     <BrowserRouter>
       <NavBar>
         <Router/>
       </NavBar>
     </BrowserRouter>
-  </Provider>
-)
+   </Provider>
+  )
+}
 
 export default App
