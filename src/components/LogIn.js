@@ -1,53 +1,60 @@
 import React, {Component} from 'react';
 import NavBar from './NavBar';
 import Listings from './Listings';
-import { Button, TextField , Card, CardContent } from '@material-ui/core';
+import { Container, Button, TextField } from '@material-ui/core';
 
-const LogIn = (props) => {
-
-  clickHandler = (e) => {
-   // e.preventDefault();
-    //console.log(this.state)
-
-    if (props.username === '') {
-      alert(`You haven't entered a username yet`) 
-    } else if (props.password === '') {
-      alert(`You must have a password`)
-    } else if (props.username !== '' && props.password !== '') {
-    this.setState({
-      loggedIn: !props.logIn,
-    })
-  }
-    console.log(props)
-  };
-
-  handleName = e => {
-      this.setState({
-        username: e.target.value,
-      })
+class LogIn extends Component {
+  state = {
+    username: '',
+    password: '',
+    logIn: false//would like to pull in from the store. 
   }
 
-  handlePassword = e => {
-    this.setState({
-      password: e.target.value
-    })
+  handleText = e => {
+    const state = {...this.state}
+    state[e.target.name] = e.target.value
+    this.setState(state)
+  }
+
+  logIn = e => {
+    e.preventDefault()
+    document.cookie = 'logIn=true;max-age=60*5000'
+    window.location.replace('/listings')
   }
 
   //make sure to pass the status
-    return props.logIn ? <Listings user={ props.users.username} loggedIn={props.logIn}/> : (
+  render() {
+    return this.state.logIn ? <Listings user={this.state.username} loggedIn={this.state.logIn}/> : (
       <div>
-        <NavBar />
-          <Card className="logInCard">
-            <CardContent>
-               <TextField onChange={handleName} label="Username *" />
-               <br />
-               <TextField onChange={handlePassword} type="password" id="outlined-password-input" label="Password *" />
-               <br />
-               <Button className="logInButton" onClick={clickHandler}>Log In</Button>
-            </CardContent>
-          </Card>
+          <NavBar/>
+          <Container>
+            <form className='logIn' onSubmit={this.logIn}>
+              <TextField
+                required
+                onChange={this.handleText}
+                value={this.state.username}
+                name="username"
+                label="*Username"
+                type="text"/>
+                <TextField
+                  required
+                  onChange={this.handleText}
+                  value={this.state.password}
+                  name="password"
+                  label="*Password"
+                  type="password"/>
+                  <Button
+                  type="submit"
+                  className="logInBtn"
+                  variant="contained"
+                  color="primary">
+                    Login
+                  </Button>
+            </form>
+          </Container>
       </div>
     )
+  }
 }
 
 export default LogIn;
