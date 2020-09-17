@@ -3,13 +3,7 @@ import NavBar from './NavBar';
 import Listings from './Listings';
 import { Button, TextField , Card, CardContent } from '@material-ui/core';
 
-
 const LogIn = (props) => {
-
-  checkAuth = () => {
-    const cookies = cookies.parse(document.cookie = 'logIn=true;max-age=60*5000')
-    return cookies['logIn'] ? true : false 
-  }
 
   clickHandler = (e) => {
    // e.preventDefault();
