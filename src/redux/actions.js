@@ -1,7 +1,3 @@
-//add business 
-//delete business 
-//login
-
 export const logIn = (status) => {
   return {
     type: 'LOG_IN',

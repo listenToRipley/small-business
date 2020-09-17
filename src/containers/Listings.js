@@ -4,8 +4,14 @@ import Listings from '../components/Listings'
 
 const mapStateToProps = (state) => {
   return {
-    businesses: state.businesses
+    business: state.businesses
   }
 }
 
-export default connect(mapStateToProps)(Listings)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteBusiness: (index) => dispatch(deleteBusiness(index))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Listings)
