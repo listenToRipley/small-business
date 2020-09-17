@@ -1,0 +1,23 @@
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.navListItem {
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  padding: 5px;
+  margin: auto 20px;
+}
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 50%;
+}
+
+.logInBtn {
+  margin-top: 25px !important; 
+}

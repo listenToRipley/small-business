@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar';
 import Listings from './Listings';
 import { Container, Button, TextField } from '@material-ui/core';
 
