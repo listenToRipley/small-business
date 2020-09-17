@@ -4,7 +4,8 @@ import Listings from '../components/Listings'
 
 const mapStateToProps = (state) => {
   return {
-    business: state.businesses
+    username: state.username,
+    businesses: state.businesses
   }
 }
 

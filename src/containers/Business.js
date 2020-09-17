@@ -4,7 +4,7 @@ import Business from '../components/Business';
 //this should be the individual business 
 const mapStateToProps = (index) => {
   return {
-    business: state.business.id
+    businesses: state.business.id
   }
 }
 
