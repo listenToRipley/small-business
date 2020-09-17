@@ -13,4 +13,4 @@ const businesses = (state = [], action) => {
   }
 }
 
-export default combineReducers({logIn, business})
+export default combineReducers({logIn, businesses})

@@ -33,8 +33,6 @@ class AddBusiness extends Component {
       payload.id = this.props.businessTotal + 1 //businessTotal doesn't currently exist 
       delete payload.open
       console.log("THE BUSINESS", payload)
-      // add this.props.addCar function here
-      // also add this.setState to close the dialog
       this.props.AddBusiness(payload)
       this.setState({ open: false })
   }

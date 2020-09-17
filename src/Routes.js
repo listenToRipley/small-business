@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
-import LogIn from './LogIn';
-import AddBusiness from './componentsAddBusiness'; //will need to change to containers
+import LogIn from './components/LogIn';
+import AddBusiness from './components/AddBusiness'; //will need to change to containers
 import Listings from './components/Listings'; //will need to change containers 
 import Business from './components/Business' //would like the route to update with the vendor's name, think about that. 
 

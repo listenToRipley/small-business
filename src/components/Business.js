@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Paper, Chip} from '@material-ui/core';
-import Business from '' //where am I getting the business from? 
+//where am I getting the business from? 
 
 const Business = (props) => {
   const id = props.match.params.id
@@ -9,7 +9,7 @@ const Business = (props) => {
   return (
     <Container maxWidth="sm" className="business-container">
         <Paper className="business-paper">
-            <h2>{car.name}</h2>
+            <h2>{business.name}</h2>
             {
                 Object.keys(business).map((key, idx) => {
                     return <Chip label={`${key}: ${business[key]}`}></Chip>
@@ -19,3 +19,5 @@ const Business = (props) => {
     </Container>
 )
 }
+
+export default Business

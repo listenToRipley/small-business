@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import NavBar from './components/NavBar';
-import Listings from './components/Listings';
+import NavBar from './NavBar';
+import Listings from './Listings';
 import { Button, TextField , Card, CardContent } from '@material-ui/core';
-import './App.css';
 
 class LogIn extends Component {
   constructor(props) {
