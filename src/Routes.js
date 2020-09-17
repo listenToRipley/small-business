@@ -11,11 +11,11 @@ const checkAuth = () => {
     return cookie['logIn'] ? true : false 
   }
 
-const ProtectedRoute = ({component: AddBusiness, ...rest}) => {
+const ProtectedRoute = ({component: Component, ...rest}) => {
   return (
       <Route
           {...rest}
-          render={(props) => checkAuth() ? <AddBusiness {...props}/> : <Redirect to="/"/> }
+          render={(props) => checkAuth() ? <Component {...props}/> : <Redirect to={{pathname:'/'}}/> }
       />
   )
 }
