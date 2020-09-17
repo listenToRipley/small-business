@@ -5,7 +5,6 @@ import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
 
-
 //for pre login - add links - Listings and login
 //for post ling - add links  - Listings, add and logout - have this based on the login status
 
@@ -30,7 +29,7 @@ const NavBar = (props) => {
            document.cookie='logIn='
            window.location.replace('/')
           }}>
-          <Link to='/'>Logout</Link>
+          <Link to='/'>Login</Link>
         </li>
 
       </ul>

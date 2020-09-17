@@ -26,7 +26,6 @@ class LogIn extends Component {
   render() {
     return this.state.logIn ? <Listings user={this.state.username} loggedIn={this.state.logIn}/> : (
       <div>
-          <NavBar/>
           <Container>
             <form className='logIn' onSubmit={this.logIn}>
               <TextField
