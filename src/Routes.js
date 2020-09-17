@@ -10,17 +10,17 @@ const checkAuth = () => {
     const cookie = cookie.parse(document.cookie)
     return cookie['logIn'] ? true : false 
   }
+
+const ProtectedRoute = ({component: AddBusiness, ...rest}) => {
+  return (
+      <Route
+          {...rest}
+          render={(props) => checkAuth() ? <AddBusiness {...props}/> : <Redirect to="/"/> }
+      />
+  )
+}
   
 const Router = () => {
-
-    const ProtectedRoute = ({component: AddBusiness, ...rest}) => {
-        return (
-            <Route
-                {...rest}
-                render={(props) => checkAuth() ? <AddBusiness {...props}/> : <Redirect to="/"/> }
-            />
-        )
-    }
 
     return (
         <Switch>
