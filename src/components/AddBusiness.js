@@ -7,7 +7,7 @@ import {
     DialogTitle
 } from '@material-ui/core'
 
-
+//do I need to add something if the login is false to stop from routing? 
 //maybe description should be a text box and not field? want to add a character limit? 
 class AddBusiness extends Component {
   state = {

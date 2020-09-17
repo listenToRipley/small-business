@@ -4,9 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
-import green from '@material-ui/core/colors/green'
 
-const primary = green[500]
 
 //for pre login - add links - Listings and login
 //for post ling - add links  - Listings, add and logout - have this based on the login status
@@ -14,9 +12,9 @@ const primary = green[500]
 const NavBar = (props) => {
 
   return (
-  <AppBar position="static">
+  <AppBar position="static" style={{background: '#3bb371'}}>
     <ToolBar>
-      <Typography variant="subtitle1" color="inherit">Small Business</Typography>
+      <Typography variant="subtitle1">Small Business</Typography>
     </ToolBar>
   </AppBar>
 )

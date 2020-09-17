@@ -44,7 +44,7 @@ class LogIn extends Component {
 
   render() { 
   //make sure to pass the status
-    return this.state.loggedIn ? <Listings user={this.state.username}/> : (
+    return this.state.loggedIn ? <Listings user={this.state.username} loggedIn={this.state.loggedIn}/> : (
       <div>
         <NavBar />
           <Card className="logInCard">

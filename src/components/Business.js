@@ -7,8 +7,8 @@ const Business = (props) => {
   const business = props.businesses.find(b => b.id === id)
 
   return (
-    <Container maxWidth="sm" className="car-container">
-        <Paper className="car-paper">
+    <Container maxWidth="sm" className="business-container">
+        <Paper className="business-paper">
             <h2>{car.name}</h2>
             {
                 Object.keys(business).map((key, idx) => {

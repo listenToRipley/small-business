@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 import Business from '../components/Business';
 
-const mapStateToProps = (state) => {
+//this should be the individual business 
+const mapStateToProps = (index) => {
   return {
-    business: state.business
+    business: state.business.id
   }
 }
 

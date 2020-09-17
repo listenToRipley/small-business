@@ -7,41 +7,77 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
+import DeleteBusiness from './AddBusiness'
 import NavBar from './NavBar'
 
 //Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
 
 const Listings = (props) => {
-  return (
-    <div>
-      <NavBar/>
-      <Container maxWidth='lg' className='listingContainer'>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Hours</TableCell>
-            <TableCell>Address</TableCell>
-            <TableCell>Delete</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {props.businesses.map((business, index) => (
-            <TableRow key={index}>
-              <TableCell>{business['name']}</TableCell>
-              <TableCell>{business['description']}</TableCell>
-              <TableCell>{business['hours']}</TableCell>
-              <TableCell>{business['address']}</TableCell>
-              <TableCell>{business['delete action not read yet']}</TableCell>
+  console.log('my props :',props)
+  if(props.loggedIn === false) {
+    return (
+      <div>
+        <NavBar/>
+        <Container maxWidth='lg' className='listingContainer'>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell>Hours</TableCell>
+              <TableCell>Address</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Container>
-    </div>
-  )
+          </TableHead>
+          <TableBody>
+            {props.businesses.map((business, index) => {
+              return (
+              <TableRow key={business.id}>
+                <TableCell>{business['name']}</TableCell>
+                <TableCell>{business['description']}</TableCell>
+                <TableCell>{business['hours']}</TableCell>
+                <TableCell>{business['address']}</TableCell>
+              </TableRow>
+            )
+            })}
+          </TableBody>
+        </Table>
+      </Container>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <NavBar/>
+        <Container maxWidth='lg' className='listingContainer'>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell>Hours</TableCell>
+              <TableCell>Address</TableCell>
+              <TableCell>Action</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+          {props.businesses.map((business) => {
+              return (
+              <TableRow key={business.id}>
+                <TableCell>{business['name']}</TableCell>
+                <TableCell>{business['description']}</TableCell>
+                <TableCell>{business['hours']}</TableCell>
+                <TableCell>{business['address']}</TableCell>
+                <TableCell><DeleteBusiness deleteBusiness={props.deleteBusiness} index={props.business.id}/></TableCell>
+              </TableRow>
+            )
+            })}
+          </TableBody>
+        </Table>
+      </Container>
+      </div>
+    )
+  }
 }
 
 export default Listings
