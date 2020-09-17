@@ -12,7 +12,7 @@ import cookie from 'cookie'
 
 const NavBar = (props) => {
 
-  if (cookie.parse(document.cookie) === 'logIn=true') {
+  if (cookie.parse(document.cookie) === 'loggedIn=true') {
     return (
       <AppBar position='static' style={{background: '#3bb371'}}>
         <ToolBar>

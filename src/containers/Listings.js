@@ -1,6 +1,7 @@
 //must include a function to delete 
 import { connect } from 'react-redux';
 import Listings from '../components/Listings'
+import {deleteBusiness} from '../redux/actions'
 
 const mapStateToProps = (state) => {
   return {

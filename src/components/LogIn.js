@@ -6,7 +6,7 @@ class LogIn extends Component {
   state = {
     username: '',
     password: '',
-    logIn: false//would like to pull in from the store. 
+    loggedIn: false//would like to pull in from the store. 
   }
 
   handleText = e => {
@@ -15,18 +15,18 @@ class LogIn extends Component {
     this.setState(state)
   }
 
-  logIn = e => {
+  loggedIn = e => {
     e.preventDefault()
-    document.cookie = 'logIn=true;max-age=60*5000'
+    document.cookie = 'loggedIn=true;max-age=60*5000'
     window.location.replace('/listings')
   }
 
   //make sure to pass the status
   render() {
-    return this.state.logIn ? <Listings user={this.state.username} loggedIn={this.state.logIn}/> : (
+    return this.state.loggedIn ? <Listings user={this.state.username} loggedIn={this.state.loggedIn}/> : (
       <div>
           <Container>
-            <form className='logIn' onSubmit={this.logIn}>
+            <form className='logIn' onSubmit={this.loggedIn}>
               <TextField
                 required
                 onChange={this.handleText}

@@ -1,6 +1,6 @@
 import { combineReducers} from 'redux'
 
-const logIn = (state = false) => state
+const loggedIn = (state = false) => state
 
 const businesses = (state = [], action) => {
   switch(action.type) {
@@ -24,4 +24,4 @@ const users = (state = [], action) => {
  }
 }
 
-export default combineReducers({logIn, businesses, users})
+export default combineReducers({loggedIn, businesses, users})

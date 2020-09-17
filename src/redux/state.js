@@ -1,5 +1,5 @@
 export default {
-  logIn: '',
+  loggedIn: false,
   users: {
     username: '',
     email: '',

@@ -1,10 +1,12 @@
 //this will be the functionality to removing a business 
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { Icon } from '@material-ui/core';
+// import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+// import { Icon } from '@material-ui/core';
 
 const DeleteBusiness  = (props) => {
+  console.log('delete :',props)
+
   const handleDelete = (e) => {
     props.deleteBusiness(props.index)
   }
@@ -14,10 +16,10 @@ const DeleteBusiness  = (props) => {
       <IconButton
       aria-lable='delete'
       aria-controls='delete-business'
-      aria-haspopup='false'>
-        <DeleteForeverIcon 
+      aria-haspopup='false' >
+        {/* <DeleteForeverIcon 
           keepMounted
-          onClick={handleDelete}/>
+          onClick={handleDelete}/> */}
       </IconButton>
     </div>
   )
