@@ -1,4 +1,4 @@
-export const logIn = (status) => {
+export const loggedIn = (status) => {
   return {
     type: 'LOG_IN',
     value: status

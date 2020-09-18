@@ -26,7 +26,7 @@ class LogIn extends Component {
     return this.state.loggedIn ? <Listings user={this.state.username} loggedIn={this.state.loggedIn}/> : (
       <div>
           <Container>
-            <form className='logIn' onSubmit={this.loggedIn}>
+            <form className='loggedIn' onSubmit={this.loggedIn}>
               <TextField
                 required
                 onChange={this.handleText}
@@ -43,7 +43,7 @@ class LogIn extends Component {
                   type="password"/>
                   <Button
                   type="submit"
-                  className="logInBtn"
+                  className="loggedInBtn"
                   variant="contained"
                   color="primary">
                     Login
