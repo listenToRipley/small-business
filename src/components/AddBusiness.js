@@ -5,14 +5,15 @@ import {
     Dialog,
     DialogContent,
     DialogTitle
-} from '@material-ui/core'
+} from '@material-ui/core';
+import Business from '../containers/Business';
 
 //do I need to add something if the login is false to stop from routing? 
 //maybe description should be a text box and not field? want to add a character limit? 
 class AddBusiness extends Component {
   state = {
     open: false, 
-    id:'', //this should be the length of the state + 1 
+    id: '', 
     name: '',
     address: '',
     hours: '',
@@ -30,7 +31,7 @@ class AddBusiness extends Component {
   handleSubmit = (e) => {
       e.preventDefault()
       const payload = { ...this.state }
-      payload.id = this.props.businessTotal + 1 //businessTotal doesn't currently exist 
+      payload.id = this.props.totalBusinesses + 1 //businessTotal doesn't currently exist 
       delete payload.open
       console.log("THE BUSINESS", payload)
       this.props.addBusiness(payload)
@@ -41,6 +42,7 @@ class AddBusiness extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.open !== this.state.open) {
       this.setState({
+        'id': '',
         'name': '',
         'address': '',
         'hours': '',

@@ -17,7 +17,7 @@ class LogIn extends Component {
 
   loggedIn = e => {
     e.preventDefault()
-    document.cookie = 'loggedIn=true;max-age=60*5000'
+    document.cookie = `loggedIn=true;max-age=60*5000;username=${this.state.username}`
     window.location.replace('/listings')
   }
 
