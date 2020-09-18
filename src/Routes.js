@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router';
-import cookie from 'cookie'
+import cookie from 'cookie';
 import LogIn from './components/LogIn';
-import AddBusiness from './components/AddBusiness'; //will need to change to containers
+import AddBusiness from './containers/AddBusiness'; //will need to change to containers
 import Listings from './containers/Listings'; //will need to change containers 
 import Business from './components/Business' //would like the route to update with the vendor's name, think about that. 
 
 const checkAuth = () => {
-    const cookie = cookie.parse(document.cookie)
-    return cookie['loggedIn'] ? true : false 
+    const cookies = cookie.parse(document.cookie)
+    return cookies['loggedIn'] ? true : false 
   }
 
 const ProtectedRoute = ({component: Component, ...rest}) => {

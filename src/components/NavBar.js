@@ -45,5 +45,5 @@ const NavBar = (props) => {
     )
   } 
 
-
+//do I need to reset the cookie? 
 export default NavBar;

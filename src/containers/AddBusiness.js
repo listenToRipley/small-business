@@ -8,4 +8,4 @@ const mapDispatchProps = (dispatch) => {
   }
 }
 
-export default connect(bull, mapDispatchProps)(AddBusiness)
+export default connect(null, mapDispatchProps)(AddBusiness)
