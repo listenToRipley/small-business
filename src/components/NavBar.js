@@ -8,6 +8,7 @@ import './componentcss.css'
 import cookie from 'cookie'
 
 const NavBar = (props) => {
+  console.log('nav props',props.business)
 
   console.log(cookie.parse(document.cookie))
 

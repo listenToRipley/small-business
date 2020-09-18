@@ -29,14 +29,12 @@ class AddBusiness extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault()
-      console.log('this payload length : ', ...this.props.totalBusinesses)
-      const business = { ...this.state }
-      business.id = this.props.totalBusinesses + 1
-      delete business.open
-      console.log("THE BUSINESS", business)
-      this.props.addBusiness(business)
+      const payload = { ...this.state }
+      payload.id = this.props.businesses.length <=0 ? this.props.businesses.length + 1 : this.props.businesses.length
+      delete payload.open
+      console.log("THE BUSINESS", payload)
+      this.props.addBusiness(payload)
       this.setState({ open: false })
-      console.log('did the id get created? ', business.id)
   }
 
   componentDidUpdate = (prevProps, prevState) => {

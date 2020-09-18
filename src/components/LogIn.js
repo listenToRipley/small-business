@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Listings from './Listings';
 import { Container, Button, TextField } from '@material-ui/core';
 
-class LogIn extends Component {
+class LogIn extends Component { 
   state = {
     username: '',
     password: '',
