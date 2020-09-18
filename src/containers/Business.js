@@ -3,8 +3,14 @@ import Business from '../components/Business';
 
 const mapStateToProps = (state) => {
   return {
-    businesses: state.business
+    business: state.business
   }
 }
 
-export default connect(mapStateToProps)(Business)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    business: (id) => dispatch(findBusiness(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Business)

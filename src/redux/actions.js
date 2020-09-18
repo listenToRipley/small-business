@@ -19,6 +19,13 @@ export const deleteBusiness = (index) => {
   }
 }
 
+export const findBusiness = (index) => {
+  return{
+    type: 'FIND_BUSINESS',
+    value: index
+  }
+}
+
 export const addUser = (users) => {
   return{
     type: 'ADD_USER',
