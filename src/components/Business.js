@@ -3,9 +3,9 @@ import {Container, Paper, Chip} from '@material-ui/core';
 //where am I getting the business from? 
 
 const Business = (props) => {
-    console.log('business props : ',props)
-  const id = props.match.params.id
-    console.log('it is : ', typeof id, ' and it is :', id)
+//     console.log('business props : ',props.id)
+//   const id = props.match.params.id
+    console.log('it is : ', typeof props.id, ' and it is :', props.id)
   const business = props.businesses.find(business => business.id === id)
 
   return (

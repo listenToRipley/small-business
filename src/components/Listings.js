@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import DeleteBusiness from './DeleteBusiness'
 import cookie from 'cookie';
-import {Link} from 'react-router-dom';
+import Business from '../containers/Business'
 
 //Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
@@ -39,7 +39,10 @@ const Listings = (props) => {
           {props.businesses.map((business) => {
               return (
               <TableRow key={business.id}>
-                <TableCell><Link to ={`/business/:${business.id}`}>{business['name']}</Link></TableCell>
+
+                <TableCell component='th' scope='row'>
+                  <Business id={business.id}>{business['name']}</Business>
+                </TableCell>
                 <TableCell>{business['description']}</TableCell>
                 <TableCell>{business['hours']}</TableCell>
                 <TableCell>{business['address']}</TableCell>
