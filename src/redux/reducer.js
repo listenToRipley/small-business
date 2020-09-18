@@ -8,7 +8,7 @@ const businesses = (state = [], action) => {
       return [...state, action.value]
     case 'FIND_BUSINESS': 
     const business = [...state]
-    business.find(index => business.id === index)
+    business.filter(index ==> business.id === index)
       return business
     case 'DELETE_BUSINESS':
       const businesses = [...state]
