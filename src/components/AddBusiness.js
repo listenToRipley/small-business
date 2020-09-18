@@ -13,7 +13,6 @@ import Business from '../containers/Business';
 class AddBusiness extends Component {
   state = {
     open: false, 
-    id: '', 
     name: '',
     address: '',
     hours: '',
@@ -30,25 +29,26 @@ class AddBusiness extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault()
-      const payload = { ...this.state }
-      payload.id = this.props.totalBusinesses + 1 //businessTotal doesn't currently exist 
-      delete payload.open
-      console.log("THE BUSINESS", payload)
-      this.props.addBusiness(payload)
+      console.log('this payload length : ', ...this.props.totalBusinesses)
+      const business = { ...this.state }
+      business.id = this.props.totalBusinesses + 1
+      delete business.open
+      console.log("THE BUSINESS", business)
+      this.props.addBusiness(business)
       this.setState({ open: false })
+      console.log('did the id get created? ', business.id)
   }
 
-  //this needs work 
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.open !== this.state.open) {
       this.setState({
-        'id': '',
         'name': '',
         'address': '',
         'hours': '',
         'description': ''
       })
     }
+    console.log(this.state)
   }
 
   render() {

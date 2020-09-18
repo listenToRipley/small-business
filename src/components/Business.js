@@ -3,8 +3,10 @@ import {Container, Paper, Chip} from '@material-ui/core';
 //where am I getting the business from? 
 
 const Business = (props) => {
+    console.log('business props : ',props)
   const id = props.match.params.id
-  const business = props.businesses.find(b => b.id === id)
+    console.log('it is : ', typeof id, ' and it is :', id)
+  const business = props.businesses.find(business => business.id === id)
 
   return (
     <Container maxWidth="sm" className="business-container">

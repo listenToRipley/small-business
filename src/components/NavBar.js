@@ -26,7 +26,7 @@ const NavBar = (props) => {
             {document.cookie === 'loggedIn=true' ?
             <div>
             <li className='navListItem'>
-                <Link totalBusinesses={props.businesses.length} to='/add_business'>Add Business</Link>  
+                <Link to='/add_business'>Add Business</Link>  
               </li>
               
               <li className='navListItem'>

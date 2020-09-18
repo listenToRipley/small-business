@@ -16,6 +16,8 @@ import {Link} from 'react-router-dom';
 
 const Listings = (props) => {
   console.log(document.cookie)
+  const businessList = props.businesses.length 
+  console.log('get this back : ', businessList)
  
     return (
       <div>
@@ -39,7 +41,7 @@ const Listings = (props) => {
           {props.businesses.map((business) => {
               return (
               <TableRow key={business.id}>
-                <TableCell><Link to ={`/business/:${business.id}`}>{business['name']}</Link></TableCell>
+                <TableCell><Link totalBusinesses={businessList} to ={`/business/:${business.id}`}>{business['name']}</Link></TableCell>
                 <TableCell>{business['description']}</TableCell>
                 <TableCell>{business['hours']}</TableCell>
                 <TableCell>{business['address']}</TableCell>
