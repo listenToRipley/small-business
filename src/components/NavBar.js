@@ -1,13 +1,14 @@
-
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './componentcss.css'
 import cookie from 'cookie'
+import ReactDOM from 'react-dom';
 
 const NavBar = (props) => {
+  console.log('props', props)
   const cookies = (cookie.parse(document.cookie))
   const status = JSON.parse(cookies.businessCookies).loggedIn
 
@@ -30,12 +31,12 @@ const NavBar = (props) => {
               </li>
               
               <li className='navListItem'>
-                <Link to='/'>Log Out</Link>  
+                <Link  to='/'>Log Out</Link>  
               </li>
             </div>
             : 
             <li className='navListItem'>
-              <Link to='/'>Log In</Link> 
+              <Link onClick={ReactDOM.cookies.remove(document.cookie.businessCookies)} to='/'>Log In</Link> 
             </li>}
            
           </ul>

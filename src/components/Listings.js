@@ -11,6 +11,7 @@ import DeleteBusiness from './DeleteBusiness'
 import cookie from 'cookie';
 import { Link } from 'react-router-dom'
 import './componentcss.css'
+import CookiesReader from './CookieReader'
 
 const Listings = (props) => {
   const cookies = (cookie.parse(document.cookie))
@@ -18,6 +19,7 @@ const Listings = (props) => {
  
     return (
       <div>
+        <CookiesReader/>
         <Container maxWidth='lg' className='listingContainer'>
         <Table>
           <TableHead>

@@ -8,7 +8,8 @@ import Business from './containers/Business';
 
 const checkAuth = () => {
     const cookies = cookie.parse(document.cookie)
-    return cookies['loggedIn'] ? true : false 
+    const status = JSON.parse(cookies.businessCookies).loggedIn
+    return status ? true : false 
   }
 
 const ProtectedRoute = ({component: Component, ...rest}) => {
@@ -26,7 +27,7 @@ const Router = () => {
         <Switch>
             <Route exact path="/" component={LogIn} />
             <Route path="/listings" component={Listings} />
-            <Route path="/business/:id" component={Business} /> 
+            <Route path="/business/id" component={Business} /> 
             <ProtectedRoute path="/add_business" component={AddBusiness}/>
         </Switch>
     );
