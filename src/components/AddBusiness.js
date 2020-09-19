@@ -5,13 +5,12 @@ import {
     DialogContent,
     DialogTitle
 } from '@material-ui/core';
-import Business from '../containers/Business';
 
 //do I need to add something if the login is false to stop from routing? 
 //maybe description should be a text box and not field? want to add a character limit? 
 class AddBusiness extends Component {
   state = {
-    open: false, 
+    open: true, 
     name: '',
     address: '',
     hours: '',
@@ -27,25 +26,18 @@ class AddBusiness extends Component {
   handleSubmit = (e) => {
       e.preventDefault()
       const payload = { ...this.state }
-      payload.id = this.props.businesses.length ? this.props.businesses.length > 0 : this.props.businesses.length 
+      const numOfBusinesses = this.props.businesses.length
+      payload.id = numOfBusinesses+1
       delete payload.open
       console.log("THE BUSINESS", payload)
       this.props.addBusiness(payload)
-      this.setState({ open: false })
-  }
-
-  //reset not working
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.open !== this.state.open) {
-      this.setState({
-        'name': '',
-        'address': '',
-        'hours': '',
-        'description': ''
-      })
+      this.setState({ 
+          'name': '',
+          'address': '',
+          'hours': '',
+          'description': ''
+       })
     }
-    console.log(this.state)
-  }
 
   render() {
     return(
@@ -83,7 +75,7 @@ class AddBusiness extends Component {
                 onChange={this.handleTextChange}
                 required
               />
-              <Button variant='contained' color='primary' type='submit' onClick={this.state.open=false}>SAVE</Button>
+              <Button variant='contained' color='primary' type='submit' >SAVE</Button>
               </form>
             </DialogContent>
         </div>
