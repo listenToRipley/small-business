@@ -17,7 +17,8 @@ import './componentcss.css'
 
 const Listings = (props) => {
   const cookies = (cookie.parse(document.cookie))
-  const status = cookies[Object.keys(cookies)]==='true'
+  console.log('cookies',cookies)
+  const status = cookies.loggedIn
   console.log('props :',props)
  
     return (
@@ -50,8 +51,12 @@ const Listings = (props) => {
                 <TableCell>{business['hours']}</TableCell>
                 <TableCell>{business['address']}</TableCell>
                    {/* need to work on the conditionals here */}
-              {status && business.length < 1 ? 
-              <TableCell><DeleteBusiness deleteBusiness={props.deleteBusiness} index={business.id}/></TableCell> : null}
+              {status && (
+              <TableCell>
+              <DeleteBusiness deleteBusiness={props.deleteBusiness} 
+              index={business.id}/>
+              </TableCell>
+              )}
               </TableRow>
             )
             })}
