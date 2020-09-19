@@ -7,10 +7,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    business: (id) => dispatch(findBusiness(id))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Business)
+export default connect(mapStateToProps)(Business)
