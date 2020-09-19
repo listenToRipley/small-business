@@ -12,20 +12,12 @@ import cookie from 'cookie';
 import { Link } from 'react-router-dom'
 import './componentcss.css'
 
-//Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
-//include a user greeting before the table 
-
 const Listings = (props) => {
   const cookies = (cookie.parse(document.cookie))
-  console.log('cookies',cookies)
-  const status = cookies.loggedIn
-  console.log('props :',props)
+  const status = JSON.parse(cookies.businessCookies)
  
     return (
       <div>
-      {status ? 
-      <h6>Logged in as : {props.username}</h6> : null
-      }
         <Container maxWidth='lg' className='listingContainer'>
         <Table>
           <TableHead>
@@ -40,7 +32,7 @@ const Listings = (props) => {
             </TableRow>
           </TableHead>
           <TableBody>
-          {props.businesses.map((business) => {
+          {props.businesses.map((business, index) => {
               return (
               <TableRow key={business.id}>
 
@@ -50,11 +42,10 @@ const Listings = (props) => {
                 <TableCell>{business['description']}</TableCell>
                 <TableCell>{business['hours']}</TableCell>
                 <TableCell>{business['address']}</TableCell>
-                   {/* need to work on the conditionals here */}
               {status && (
               <TableCell>
               <DeleteBusiness deleteBusiness={props.deleteBusiness} 
-              index={business.id}/>
+              index={index}/>
               </TableCell>
               )}
               </TableRow>

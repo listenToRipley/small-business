@@ -9,7 +9,7 @@ import cookie from 'cookie'
 
 const NavBar = (props) => {
   const cookies = (cookie.parse(document.cookie))
-  const status = cookies[Object.keys(cookies)]==='true'
+  const status = JSON.parse(cookies.businessCookies).loggedIn
 
     return (
       <AppBar position='static' style={{background: '#3bb371'}}>
