@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Listings from './Listings';
 import { Container, Button, TextField } from '@material-ui/core';
+import './componentcss.css'
 
 class LogIn extends Component { 
   state = {

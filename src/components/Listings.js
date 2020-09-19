@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core'
 import DeleteBusiness from './DeleteBusiness'
 import cookie from 'cookie';
-import Business from '../containers/Business'
 import { Link } from 'react-router-dom'
+import './componentcss.css'
 
 //Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
