@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import {
     Button,
     TextField,
-    Dialog,
     DialogContent,
     DialogTitle
 } from '@material-ui/core';
@@ -19,8 +18,6 @@ class AddBusiness extends Component {
     description: ''
   }
 
-  toggleDialog = () => this.setState({ open: !this.state.open })
-
   handleTextChange = (e) => {
       const newState = { ...this.state }
       newState[e.target.id] = e.target.value
@@ -30,13 +27,14 @@ class AddBusiness extends Component {
   handleSubmit = (e) => {
       e.preventDefault()
       const payload = { ...this.state }
-      payload.id = this.props.businesses.length <=0 ? this.props.businesses.length + 1 : this.props.businesses.length
+      payload.id = this.props.businesses.length ? this.props.businesses.length > 0 : this.props.businesses.length 
       delete payload.open
       console.log("THE BUSINESS", payload)
       this.props.addBusiness(payload)
       this.setState({ open: false })
   }
 
+  //reset not working
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.open !== this.state.open) {
       this.setState({
@@ -53,15 +51,6 @@ class AddBusiness extends Component {
     return(
       <Fragment>
         <div>
-          <h1 className='addBusinessTitle'>Add Business:</h1>
-          <Button 
-            variant='container'
-            className='addBusiness'
-            onClick={this.toggleDialog}
-          >Add Business</Button>
-        </div>
-        <div>
-          <Dialog open={this.state.open} onClose={this.toggleDialog}>
             <DialogTitle>Add Business</DialogTitle>
             <DialogContent>
               <form
@@ -94,10 +83,9 @@ class AddBusiness extends Component {
                 onChange={this.handleTextChange}
                 required
               />
-              <Button variant='contained' color='primary' type='submit'>Submit</Button>
+              <Button variant='contained' color='primary' type='submit' onClick={this.state.open=false}>SAVE</Button>
               </form>
             </DialogContent>
-          </Dialog>
         </div>
       </Fragment>
     )

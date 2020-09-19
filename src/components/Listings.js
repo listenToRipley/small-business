@@ -22,7 +22,7 @@ const Listings = (props) => {
  
     return (
       <div>
-      {document.cookie=== 'loggedIn=true' ? 
+      {status ? 
       <h6>Logged in as : {props.username}</h6> : null
       }
         <Container maxWidth='lg' className='listingContainer'>

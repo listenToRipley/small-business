@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Paper, Chip} from '@material-ui/core';
+import {Container, Paper} from '@material-ui/core';
 
 const Business = (props) => {
     console.log('business props :', props)
