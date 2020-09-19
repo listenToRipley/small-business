@@ -10,17 +10,20 @@ import {
 import DeleteBusiness from './DeleteBusiness'
 import cookie from 'cookie';
 import Business from '../containers/Business'
+import { Link } from 'react-router-dom'
 
 //Update this to assess the login status, if true, show the option to delete, otherwise, don't show 
 //include a user greeting before the table 
 
 const Listings = (props) => {
-  console.log(document.cookie)
+  const cookies = (cookie.parse(document.cookie))
+  const status = cookies[Object.keys(cookies)]==='true'
+  console.log('props :',props)
  
     return (
       <div>
       {document.cookie=== 'loggedIn=true' ? 
-      <h6>Logged in as : {}</h6> : null
+      <h6>Logged in as : {props.username}</h6> : null
       }
         <Container maxWidth='lg' className='listingContainer'>
         <Table>
@@ -30,7 +33,7 @@ const Listings = (props) => {
               <TableCell>Description</TableCell>
               <TableCell>Hours</TableCell>
               <TableCell>Address</TableCell>
-              {document.cookie=== 'loggedIn=true'? 
+              {status? 
               <TableCell>Action</TableCell> : null
               }
             </TableRow>
@@ -41,13 +44,13 @@ const Listings = (props) => {
               <TableRow key={business.id}>
 
                 <TableCell component='th' scope='row'>
-                  <Business id={business.id}>{business['name']}</Business>
+                  <Link to={`/business/:${business.id}`}>{business['name']}</Link>
                 </TableCell>
                 <TableCell>{business['description']}</TableCell>
                 <TableCell>{business['hours']}</TableCell>
                 <TableCell>{business['address']}</TableCell>
                    {/* need to work on the conditionals here */}
-              {document.cookie=== 'loggedIn=true' ? 
+              {status && business.length < 1 ? 
               <TableCell><DeleteBusiness deleteBusiness={props.deleteBusiness} index={business.id}/></TableCell> : null}
               </TableRow>
             )

@@ -17,7 +17,7 @@ class LogIn extends Component {
 
   loggedIn = e => {
     e.preventDefault()
-    document.cookie = `loggedIn=true;max-age=60*5000;username=${this.state.username}`
+    document.cookie = `loggedIn=true;max-age=60*5000;`
     window.location.replace('/listings')
   }
 
@@ -45,7 +45,8 @@ class LogIn extends Component {
                   type="submit"
                   className="loggedInBtn"
                   variant="contained"
-                  color="primary">
+                  color="primary"
+                  username={this.state.username}>
                     Login
                   </Button>
             </form>

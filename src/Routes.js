@@ -26,7 +26,7 @@ const Router = () => {
         <Switch>
             <Route exact path="/" component={LogIn} />
             <Route path="/listings" component={Listings} />
-            <Route path="/business/?id" component={Business} /> 
+            <Route path="/business/id" component={Business} /> 
             <ProtectedRoute path="/add_business" component={AddBusiness}/>
         </Switch>
     );

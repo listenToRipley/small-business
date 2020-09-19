@@ -8,9 +8,8 @@ import './componentcss.css'
 import cookie from 'cookie'
 
 const NavBar = (props) => {
-  console.log('nav props',props.business)
-
-  console.log(cookie.parse(document.cookie))
+  const cookies = (cookie.parse(document.cookie))
+  const status = cookies[Object.keys(cookies)]==='true'
 
     return (
       <AppBar position='static' style={{background: '#3bb371'}}>
@@ -24,7 +23,7 @@ const NavBar = (props) => {
               <Link to='/listings'>Listings</Link>
             </li>
             
-            {document.cookie === 'loggedIn=true' ?
+            {status ?
             <div>
             <li className='navListItem'>
                 <Link to='/add_business'>Add Business</Link>  

@@ -5,7 +5,6 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { Icon } from '@material-ui/core';
 
 const DeleteBusiness  = (props) => {
-  console.log('delete :',props)
 
   const handleDelete = (e) => {
     props.deleteBusiness(props.index)
