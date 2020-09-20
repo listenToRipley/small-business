@@ -10,13 +10,14 @@ const DeleteBusiness  = (props) => {
   return(
     <div>
       <IconButton
+      onClick={handleDelete}
       aria-label='delete'
       aria-controls='delete-business'
       aria-haspopup='false' >
         <DeleteForeverIcon 
           style={{color: 'red'}}
           keepMounted
-          onClick={handleDelete}/>
+          />
       </IconButton>
     </div>
   )

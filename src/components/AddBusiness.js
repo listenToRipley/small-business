@@ -28,7 +28,7 @@ class AddBusiness extends Component {
       const numOfBusinesses = this.props.businesses.length
       payload.id = numOfBusinesses+1
       delete payload.open
-      console.log("THE BUSINESS", payload)
+      // console.log("THE BUSINESS", payload)
       this.props.addBusiness(payload)
       this.setState({ 
           'name': '',

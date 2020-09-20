@@ -37,9 +37,8 @@ const Listings = (props) => {
           {props.businesses.map((business, index) => {
               return (
               <TableRow key={business.id}>
-
-                <TableCell component='th' scope='row'>
-                  <Link to={`/business/:${business.id}`}>{business['name']}</Link>
+                <TableCell component='th' scope='row' >
+                  <Link id={business.id} to={`/business/:${business.id}`}>{business['name']}</Link>
                 </TableCell>
                 <TableCell>{business['description']}</TableCell>
                 <TableCell>{business['hours']}</TableCell>

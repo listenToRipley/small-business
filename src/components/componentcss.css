@@ -29,8 +29,8 @@
 .addBusinessForm {
   display: flex;
   flex-direction: column;
-  margin: 15% auto;
-  width: 75%;
+  margin: 2% auto;
+  width: 65%;
 }
 
 .textFields{
@@ -40,4 +40,8 @@
 .businessInfoItem {
   padding: 50px auto;
   margin: 25px auto;
+}
+
+.cookieGreeting {
+  margin-left: 15px;
 }
