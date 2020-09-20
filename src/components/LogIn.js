@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Listings from './Listings';
 import { Container, Button, TextField } from '@material-ui/core';
-import './componentcss.css';
+import './componentcss.css'
 
 class LogIn extends Component { 
   state = {
@@ -22,12 +22,11 @@ class LogIn extends Component {
     document.cookie = "businessCookies="+JSON.stringify({
       "username":this.state.username,
       "loggedIn":true,
-      "max-Age":60*100000
     })
+    document.cookie="max-Age:60*10000"
     window.location.replace('/listings')
   }
 
-  //make sure to pass the status
   render() {
     return this.state.loggedIn ? <Listings user={this.state.username} loggedIn={this.state.loggedIn}/> : (
       <div>

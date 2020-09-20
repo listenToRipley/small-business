@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import {Container, Paper} from '@material-ui/core';
 import './componentcss.css'
-import CookiesReader from './CookieReader'
 import CookieReader from './CookieReader';
 
 const Business = (props) => {
