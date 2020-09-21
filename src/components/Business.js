@@ -4,9 +4,8 @@ import './componentcss.css'
 import CookieReader from './CookieReader';
 
 const Business = (props) => {
-    const businessId = props.match.params.id.substring(1)
+    const businessId = parseInt(props.match.params.id.substring(1), 10)
     const business = props.businesses.find((b) => b.id === businessId)
-    console.log('here is the id we received :', businessId,'we are receiving this array of businesses : ' ,props.businesses, ' and the business we get back now is : ', business )
 
   return (
     <Fragment>
