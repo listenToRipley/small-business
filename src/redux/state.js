@@ -5,6 +5,5 @@ export default {
     email: '',
     password: ''
   },
-  businesses: [ 
-  ]
+  businesses: []
 }

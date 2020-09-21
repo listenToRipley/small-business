@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -9,21 +9,11 @@ import cookie from 'cookie'
 const cookies = (cookie.parse(document.cookie))
 const status = JSON.parse(cookies.businessCookies)
 
-class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state={
-      loggedIn: status.loggedIn
-    }
-  }
 
-  handleClick = (e) => {
-    this.setState({
-      loggedIn: status.loggedIn = false
-    })
-  }
+const NavBar = () => {
+  
+  const [loggedIn, setLoggedIn ] = useState(status ? true : null)
 
-render() {
   return (
     <AppBar position='static' style={{background: '#3bb371'}}>
       <ToolBar>
@@ -36,14 +26,14 @@ render() {
             <Link to='/listings'>Listings</Link>
           </li>
           
-          {this.state.loggedIn===true ?
+          {loggedIn===true ?
           <div>
           <li className='navListItem'>
               <Link to='/add_business'>Add Business</Link>  
             </li>
             
             <li className='navListItem'>
-              <Link onClick={this.handleClick} to='/'>Log Out</Link>  
+              <Link onClick={() => setLoggedIn(cookies.loggedIn === false)} to='/'>Log Out</Link>  
             </li>
           </div>
           : 
@@ -56,8 +46,7 @@ render() {
       </ToolBar>
     </AppBar>
   )
-}
-  } 
+} 
 
 //do I need to reset the cookie? 
 export default NavBar;
