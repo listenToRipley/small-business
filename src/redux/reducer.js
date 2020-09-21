@@ -24,8 +24,8 @@ const users = (state = [], action) => {
  }
 }
 
-const mapAPI = () => {
-  fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters')
-}
+// const mapAPI = () => {
+//   fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters')
+// }
 
 export default combineReducers({loggedIn, businesses, users})
