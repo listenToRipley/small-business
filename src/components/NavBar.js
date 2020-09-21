@@ -7,7 +7,7 @@ import './componentcss.css'
 import cookie from 'cookie'
 
 const cookies = (cookie.parse(document.cookie))
-const status = JSON.parse(cookies.businessCookies)
+const status = cookies.businessCookies
 
 
 const NavBar = () => {

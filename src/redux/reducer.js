@@ -11,7 +11,7 @@ const businesses = (state = [], action) => {
       businesses.splice(action.value, 1)
       return businesses
     default:
-      return state
+      return console.log('here is the state', state), state
   }
 }
 
