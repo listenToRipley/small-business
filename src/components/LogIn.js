@@ -22,7 +22,7 @@ class LogIn extends Component {
     document.cookie = "businessCookies="+JSON.stringify({
       "username":this.state.username,
       "loggedIn":true,
-      "max-Age":(60*10000)
+      // "max-Age":(60*10000)
     })
     window.location.replace('/listings')
   }

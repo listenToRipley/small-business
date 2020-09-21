@@ -16,7 +16,6 @@ const DeleteBusiness  = (props) => {
       aria-haspopup='false' >
         <DeleteForeverIcon 
           style={{color: 'red'}}
-          keepMounted
           />
       </IconButton>
     </div>
