@@ -23,18 +23,32 @@
 }
 
 .addBusinessPage{
-  margin: 50px 50px ;
+  margin: 25px;
+  padding: none;
+ }
+
+ .addBusinessBody {
+  display: flex;
  }
 
 .addBusinessForm {
   display: flex;
   flex-direction: column;
-  margin: 2% auto;
-  width: 65%;
+  width: 100%;
+  margin-left: 2%;
+}
+
+.addMap {
+  margin-left: 0;
 }
 
 .textFields{
   margin: 20px auto;
+}
+
+.addBtn {
+  margin-top: 25px !important; 
+  width: 100%;
 }
 
 .businessInfoItem {

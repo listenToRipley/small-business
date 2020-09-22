@@ -25,3 +25,29 @@ export const addUser = (users) => {
     value: users
   }
 }
+
+const defaultMap = (data) => {
+  return {
+    type:'FETCH_MAP',
+    value: data
+  }
+}
+
+const createMap = (input) => {
+  return {
+    type: 'FIND_BUSINESS',
+    value: input
+  }
+}
+
+export const mapApi = (map) => {
+  return (dispatch) => {
+    fetch(`https://maps.google.com/maps/api/geocode/json?key=<${process.env.REACT_APP_GOOGLE_MAP_API_KEY}>&address=1600+Amphitheatre+Parkway,+Mountain+View,+CA`)
+  .then(res => res.json())
+  .then(data => {
+    dispatch({
+      defaultMap, createMap
+    })
+  })
+  }
+}

@@ -13,6 +13,14 @@ const status = cookies.businessCookies
 const NavBar = () => {
   
   const [loggedIn, setLoggedIn ] = useState(status ? true : null)
+  const [username, setUsername ] = useState(status? status.username : null)
+
+
+  const handleLogOut = () => {
+    setLoggedIn(cookies.loggedIn = false)
+    setUsername(cookies.username = null)
+    cookies.maxAge = null
+  }
 
   return (
     <AppBar position='static' style={{background: '#3bb371'}}>
@@ -33,7 +41,7 @@ const NavBar = () => {
             </li>
             
             <li className='navListItem'>
-              <Link onClick={() => setLoggedIn(cookies.loggedIn === false)} to='/'>Log Out</Link>  
+              <Link onClick={handleLogOut} to='/'>Log Out</Link>  
             </li>
           </div>
           : 

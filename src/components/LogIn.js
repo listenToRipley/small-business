@@ -14,7 +14,6 @@ class LogIn extends Component {
     const state = {...this.state}
     state[e.target.name] = e.target.value
     this.setState(state)
-    console.log(state)
   }
 
   loggedIn = e => {
@@ -22,7 +21,7 @@ class LogIn extends Component {
     document.cookie = "businessCookies="+JSON.stringify({
       "username":this.state.username,
       "loggedIn":true,
-      "max-Age":(60*10000)
+      "maxAge":(60*10000)
     })
     window.location.replace('/listings')
   }

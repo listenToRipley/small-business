@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import {
+    Container,
+    Paper,
     Button,
     TextField,
     DialogContent,
@@ -42,9 +44,9 @@ class AddBusiness extends Component {
     return(
       <Fragment>
       <CookieReader/>
+      <DialogTitle>Add Business</DialogTitle>
         <div>
-            <DialogTitle>Add Business</DialogTitle>
-            <DialogContent>
+            <DialogContent className='addBusinessBody'> 
               <form
               onSubmit={this.handleSubmit}
               className='addBusinessForm'>
@@ -75,9 +77,13 @@ class AddBusiness extends Component {
                 onChange={this.handleTextChange}
                 required
               />
-              <Button variant='contained' color='primary' type='submit' >SAVE</Button>
+              <Button className='addBtn' variant='contained' color='primary' type='submit' >SAVE</Button>
               </form>
+              <Container className='addMap'>
+                <Paper>MAP</Paper>
+             </Container>
             </DialogContent>
+            
         </div>
       </Fragment>
     )

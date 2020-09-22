@@ -24,8 +24,15 @@ const users = (state = [], action) => {
  }
 }
 
-// const mapAPI = () => {
-//   fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/output?parameters')
-// }
+const mapAPI = (state = [], action) => {
+  switch(action.type) {
+    case 'FETCH_MAP': 
+      return action.value
+    case 'FIND_BUSINESS': 
+    //this will need out, since we have to determine the input 
+      return action.value
+  }
+  
+}
 
 export default combineReducers({loggedIn, businesses, users})
