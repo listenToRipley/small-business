@@ -1,0 +1,61 @@
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.navListItem {
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  padding: 5px;
+  margin: auto 20px;
+}
+
+.loggedIn {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 50%;
+}
+
+.loggedInBtn {
+  margin-top: 25px !important; 
+}
+
+.addBusinessPage{
+  margin: 25px;
+  padding: none;
+ }
+
+ .addBusinessBody {
+  display: flex;
+ }
+
+.addBusinessForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 2%;
+}
+
+.addMap {
+  margin-left: 0;
+}
+
+.textFields{
+  margin: 20px auto;
+}
+
+.addBtn {
+  margin-top: 25px !important; 
+  width: 100%;
+}
+
+.businessInfoItem {
+  padding: 50px auto;
+  margin: 25px auto;
+}
+
+.cookieGreeting {
+  margin-left: 15px;
+}
