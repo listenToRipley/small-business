@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/small-business/static/css/main.e777d63c.chunk.css",
+    "main.js": "/small-business/static/js/main.e8426bbb.chunk.js",
+    "main.js.map": "/small-business/static/js/main.e8426bbb.chunk.js.map",
+    "runtime-main.js": "/small-business/static/js/runtime-main.589090a9.js",
+    "runtime-main.js.map": "/small-business/static/js/runtime-main.589090a9.js.map",
+    "static/js/2.6e4d5d89.chunk.js": "/small-business/static/js/2.6e4d5d89.chunk.js",
+    "static/js/2.6e4d5d89.chunk.js.map": "/small-business/static/js/2.6e4d5d89.chunk.js.map",
+    "index.html": "/small-business/index.html",
+    "precache-manifest.4147f574e80e79f6feb78c903b5c8f27.js": "/small-business/precache-manifest.4147f574e80e79f6feb78c903b5c8f27.js",
+    "service-worker.js": "/small-business/service-worker.js",
+    "static/css/main.e777d63c.chunk.css.map": "/small-business/static/css/main.e777d63c.chunk.css.map",
+    "static/js/2.6e4d5d89.chunk.js.LICENSE.txt": "/small-business/static/js/2.6e4d5d89.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.589090a9.js",
+    "static/js/2.6e4d5d89.chunk.js",
+    "static/css/main.e777d63c.chunk.css",
+    "static/js/main.e8426bbb.chunk.js"
+  ]
+}
